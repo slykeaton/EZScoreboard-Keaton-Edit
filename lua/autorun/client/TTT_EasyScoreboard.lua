@@ -25,13 +25,13 @@ EZS.DefaultLabel = ""
 EZS.HideBackground = false
 
 -- Width of the rank columns
-EZS.ColumnWidth = 100
+EZS.ColumnWidth = 100 --Keaton: Changed from default
 
 -- the number of columns (not pixels!!!!!!!) to shift to the left
 EZS.ShiftLeft = 0
 
 -- shift tags, search marker, etc how much? (IN PIXELS)
-EZS.ShiftOthers = 100
+EZS.ShiftOthers = 100 --Keaton: Changed from default
 
 -- Show icon as well as rank text? (if possible)
 EZS.ShowIconsWithRanks = true
@@ -274,8 +274,6 @@ function EZS.AddTitleLabel( sb )
 end
 hook.Add( "TTTScoreboardColumns", "EZS_TitleColumns", EZS.AddTitleLabel )
 
---END K-ADDITION
-
 function EZS.AddRankLabel( sb )
 	EZS.Scoreboard = sb
 	local heading = EZS.CreateRankLabel.enabled and EZS.CreateRankLabel.text or ""
@@ -380,6 +378,8 @@ function EZS.AddRankLabel( sb )
 	hook.Run( "EZS_AddColumns", sb )
 end
 hook.Add( "TTTScoreboardColumns", "EZS_Columns", EZS.AddRankLabel )
+
+--END K-ADDITION
 
 function EZS.AddNameColor( ply )
 	if not EZS.UseNameColors then return end
